@@ -1,5 +1,11 @@
+# Md Lutfar Rahman
+# mrahman9@memphis.edu
+# Computational Geometry
+# PA-1
 
 
+
+#Implementation of the tree
 class PrioritySearch(object):
 	"""docstring for PrioritySearch"""
 	def __init__(self, P):
@@ -17,6 +23,13 @@ class PrioritySearch(object):
 		#print(P)
 
 		median = int((len(P)+1)/2)
+		#print(median)
+
+		if len(P)>0:
+			ymid = P[median-1].y
+			root.ymid = ymid
+		else:
+			root.ymid = root.y
 
 		left_nodes = P[:median]
 		#print(left_nodes)
@@ -38,7 +51,7 @@ class PrioritySearch(object):
 			self.showTree2(root.left)
 			self.showTree2(root.right)
 
-
+# get a point with minimum x-value
 	def getMinX(self, P):
 		minx_node = P[0]
 		min_i = 0
@@ -65,24 +78,24 @@ class PrioritySearch(object):
 		if v and v.x <= qx and qy1 <= v.y and v.y <= qy2:
 			reported.append(v)
 
-		if splitted == -1:
-			if qy2 <= v.y:
+		if splitted == -1:    #No split
+			if qy2 <= v.ymid:
 				self.QUERYPRIOSEARCHTREE(v.left, qx, qy1, qy2, -1, reported)
 
-			elif qy1 > v.y:
+			elif qy1 > v.ymid:
 				self.QUERYPRIOSEARCHTREE(v.right, qx, qy1, qy2, -1, reported)
 
-			elif qy1 <= v.y:
-				self.QUERYPRIOSEARCHTREE(v.right, qx, qy1, qy2, 1, reported)
-				self.QUERYPRIOSEARCHTREE(v.left, qx, qy1, qy2, 2, reported)
-		elif splitted == 1:
-			if qy1 <= v.y:
+			elif qy1 <= v.ymid:
+				self.QUERYPRIOSEARCHTREE(v.left, qx, qy1, qy2, 1, reported)
+				self.QUERYPRIOSEARCHTREE(v.right, qx, qy1, qy2, 2, reported)
+		elif splitted == 1:  #left split
+			if qy1 <= v.ymid:
 				self.REPORTINSUBTREE(v.right, qx, reported)
 				self.QUERYPRIOSEARCHTREE(v.left, qx, qy1, qy2, 1, reported)
 			else:
 				self.QUERYPRIOSEARCHTREE(v.right, qx, qy1, qy2, 1, reported)
-		else:
-			if qy2 > v.y:
+		elif splitted == 2:  #right split
+			if qy2 > v.ymid:
 				self.REPORTINSUBTREE(v.left, qx, reported)
 				self.QUERYPRIOSEARCHTREE(v.right, qx, qy1, qy2, 2, reported)
 			else:
@@ -104,6 +117,7 @@ class Node(object):
 		self.y = int(y)
 		self.left = None
 		self.right = None
+		self.ymid = None
 
 	def __str__(self):
 		return "(%s,%s)"%(self.x,self.y)
@@ -130,7 +144,7 @@ if __name__ == "__main__":
 
 	P = readDataFile()
 	obj = PrioritySearch(P)
-	#obj.showTree()
+	obj.showTree()
 
 	while True:
 		print('Enter qx qy1 qy2: ')
@@ -138,5 +152,8 @@ if __name__ == "__main__":
 		if ui == '0':
 			break
 		qx, qy1, qy2 = ui.split()
-		print(obj.search(int(qx),int(qy1),int(qy2)))
+		ans = obj.search(int(qx),int(qy1),int(qy2))
+		for p in ans:
+			print(p)
+		print(len(ans))
 		
