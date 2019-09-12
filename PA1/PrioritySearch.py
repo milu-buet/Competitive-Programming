@@ -156,4 +156,5 @@ if __name__ == "__main__":
 		for p in ans:
 			print(p)
 		print(len(ans))
-		
+
+## input format for 'qx qy1 qy2' = '11 5 10'
