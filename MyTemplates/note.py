@@ -3,7 +3,7 @@
 sorted(freq, key=freq.__getitem__)
 
 #Plain bfs
-bfs(root):
+def bfs(root):
 	if root == None:
 		return
 
@@ -30,7 +30,7 @@ bfs(root):
         node = root
         while node or stack:
             while node:
-                nlist.append(node.val)  # pre
+                #nlist.append(node.val)  # pre
                 stack.append(node)
                 node = node.left
                 
@@ -97,3 +97,45 @@ bfs(root):
             
             
         return root
+
+
+
+
+
+
+    def twobst(root1, root2):
+
+        st1 = [root1]
+        vs1 = set()
+
+        st2 = [root2]
+        vs2 = set()
+
+        while st1 or st2:
+            if st1 and st1[-1] not in vs1:
+                n1 = st1.pop()
+                if n1.right: st1.append(n1.right)
+                st1.append(n1)
+                if n1.left: st1.append(n1.left)
+
+                vs1.add(n1)
+
+            elif st2 and st[-1] not in vs2:
+                n2 = st2.pop()
+                if n2.right: st2.append(n2.right)
+                st2.append(n2)
+                if n2.left: st2.append(n2.left)
+
+                vss.add(n2)
+            else:
+
+                if st1 and st2 and st1[-1].val <= st2[-1],val:
+                    print(st1.pop())
+                elif st1 and st2 and st1[-1].val > st2[-1],val:
+                    print(st2.pop())
+                elif st1:
+                    print(st1.pop())
+                elif st2:
+                    print(st2.pop())
+
+
