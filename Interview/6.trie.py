@@ -13,29 +13,25 @@ class Node(object):
 		self.neighbours = {}
 		self.end = False
 
-
 class Trie(object):
+	"""docstring for Trie"""
 	def __init__(self):
 		self.root = Node(None)
 
 	def add(self, s):
 		node = self.root
-		i, n = 0, len(s)
-		while i<n:
+		for i in range(len(s)):
 			if s[i] not in node.neighbours:
 				node.neighbours[s[i]] = Node(s[i])
 			node = node.neighbours[s[i]]
-			i+=1
 		node.end = True
 
 	def search(self, s):
 		node = self.root
-		i, n = 0, len(s)
-		while i<n:
+		for i in range(len(s)):
 			if s[i] not in node.neighbours:
 				return False
 			node = node.neighbours[s[i]]
-			i+=1
 		return node.end
 
 	def show(self):
@@ -46,12 +42,14 @@ class Trie(object):
 			for n in list(node.neighbours.keys())[::-1]:
 				stack.append(node.neighbours[n])
 
-
 trie = Trie()
 trie.add('abcd')
 trie.add('abc')
 trie.add('fabc')
 trie.show()
+
+
+
 
 
 		

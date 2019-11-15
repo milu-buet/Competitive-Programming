@@ -1,0 +1,46 @@
+
+
+Problems in concurrency:
+1. Race conditions
+2. Deadlock
+3. Starvation
+
+
+Race conditions: 
+the program ends with an undesired output, resulting from the sequence of execution among the processes.
+
+
+Dealock:
+the concurrent processes wait for some necessary resources from each other. As a result, none of them can make progress.
+
+
+Deadlock Conditions
+In order for a deadlock to occur, you must have the following four conditions met:
+1.	 Mutual Exclusion: Only one process can use a resource at a given time.
+2.	 Hold and Wait: Processes already holding a resource can request new ones.
+3.	 No Preemption: One process cannot forcibly remove another process’ resource.
+4.	 Circular Wait: Two or more processes form a circular chain where each process is waiting on another resource in the chain.
+
+
+Deadlock Handling
+1. Lock ordering
+2. Lock timeout
+3. Detection: 
+	# detect competing processes and terminate.
+	# It is difficult to detect lock since multiple lock types and thread resources.
+
+
+
+Starvation
+Process never getting resource due to other processes always locked it.
+perpetually denied necessary resources to progress its works.
+
+
+Livelock
+Kind of Starvation.
+Occurs when two or more processes continually repeat the same interaction in response to changes in the other processes without doing any useful work
+
+
+
+	
+

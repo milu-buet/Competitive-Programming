@@ -1,0 +1,10 @@
+
+
+1. Disjoint set
+2. Cycle detection - undirected graph - Disjoint set - ElogV
+3. topo sort
+4. Cycle detection - Directed graph - toposort
+5. Articulation point
+6. Bridge
+7. MST
+8. Shortest path

@@ -4,7 +4,7 @@
 # AVL tree
 # All operations O(logn)
 # depth: 1.44*log(N)
-# need to svae height
+# need to save height
 
 
 # Red-black Tree

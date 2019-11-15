@@ -44,7 +44,8 @@
 
 
 # Counting sort
-# Counting sort is efficient if the range of input data is not significantly greater than the number of objects to be sorted. Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K.
+# Counting sort is efficient if the range of input data is not significantly greater than the number of objects to be sorted. 
+	#Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K.
 # It is not a comparison based sorting. It running time complexity is O(n) with space proportional to the range of data.
 # It is often used as a sub-routine to another sorting algorithm like radix sort.
 # Counting sort uses a partial hashing to count the occurrence of the data object in O(1).
@@ -54,3 +55,29 @@
 
 
 # radix-sort
+# n = array size
+# d  = digits, b = base, range(1-k)
+# d = log_b_(k+1)
+# T(n) = O(d*(n+b))
+# S(n) = O(n+k)
+# If we have log2n bits for every digit, the running time of Radix appears to be better than Quick Sort for a wide range of input numbers.
+
+# 
+
+
+
+# online sorting
+# Not whole array is necessay to sort
+# Tree Sort: use a balanced BST O(nlogn)
+# Heapsort: O(nlogn)
+# Insertion sort: O(n^2)
+
+
+
+
+
+# How to handle sorting big data?
+# Need externel sorting
+# 1. Merge sort variation
+# 2. Quick sort variation
+# https://en.wikipedia.org/wiki/External_sorting

@@ -61,6 +61,7 @@ print(Solution().sortArray(A))
 # T(n) = 2*T(n/2) + theta(n) = theta(nlogn)
 # S(n) = O(1)
 
+
 class Node(object):
 	def __init__(self, val):
 		self.val = val
@@ -72,7 +73,8 @@ class Solution(object):
         if node is None or node.next is None:
         	return node
         #return self.mergesort(node)
-        return self.mergesortIta(node)
+        #return self.mergesortIta(node)
+        return self.mergesortIta2(node)
 
     def mergesort(self, node):
         if node is None or node.next is None:
@@ -96,41 +98,67 @@ class Solution(object):
     		n-=1
     	return node
 
-    def mergesortIta(self, node):
-    	n = self.getLen(node)
-    	cs = 1
-    	head = node
-    	while cs < n:
-    		h1 = head
-    		pt = None
-    		while h1:
-    			t1 = self.getnth(h1, cs)
-    			h2 = t1.next
 
-    			if h2:
-    				t2 = self.getnth(h2, cs)
-    				nhead = t2.next
-    				h,t = self.merge2(h1, t1, h2, t2)
-    				h1 = nhead
-    			else:
-    				h,t = h1,t1
-    				h1 = None
+    def mergesortIta2(self, node):
+        n = self.getLen(node)
+        cs = 1
+        head = node
+        while cs < n:
+            beg = head
+            prevend = None
+            while beg:
+                mid = self.getnth(beg, cs)
+                end = self.getnth(mid, cs+1)
+                beg, end, endnxt = self.merge3(beg, mid, end)
+                if prevend:
+                    prevend.next = beg  #previous tail -> new head
+                else:
+                    head = beg  # first time
+                prevend = end
+                beg = endnxt
+            cs = 2*cs
+        return head
 
-    			if pt:
-    				pt.next = h
-    			else:
-    				head = h
-    			pt = t
- 
-    		cs = 2*cs
-    	return head
+    def merge3(self, beg, mid, end):
 
-# 3 1 2
-# cs=1, h1=3, pt = None
-# cs=1, h1=3, t1=3, h2=1, t2=1, nhead=2
-# cs=1, h=1,t=3, head=1, pt=3
-# cs=1, h1=2,t1=2, h2=None, t2=None 
+        head = Node(None)
+        ch = head
+        
+        h1 = beg 
+        h2 = None
+        endnxt = None
 
+        if mid:
+            h2 = mid.next
+            mid.next = None
+        
+        if end:
+            endnxt = end.next
+            end.next = None
+
+        while h1 and h2:
+
+            if h1.val <= h2.val:
+                ch.next = h1
+                ch = ch.next
+                h1 = h1.next
+            else:
+                ch.next = h2
+                ch = ch.next
+                h2 = h2.next
+
+        while h1:
+            ch.next = h1
+            ch = ch.next
+            h1 = h1.next
+
+        while h2:
+            ch.next = h2
+            ch = ch.next
+            h2 = h2.next
+
+
+        return head.next, ch, endnxt
 
     def getbackfront(self, node):
     	
@@ -164,30 +192,6 @@ class Solution(object):
     		cur.next  = node2
 
     	return head.next
-
-    def merge2(self, h1, t1, h2, t2):
-    	head = Node(None)
-    	cur = head
-
-    	t1.next = None
-    	t2.next = None
-
-    	while h1 and h2:
-    		if h1.val <= h2.val:
-    			cur.next = h1
-    			cur = cur.next
-    			h1 = h1.next
-    		else:
-    			cur.next = h2
-    			cur = cur.next
-    			h2 = h2.next
-
-    	if h1:
-    		cur.next = h1
-    		tail = t1
-    	elif h2:
-    		cur.next = h2
-    		tail = t2
 
     	return head.next, tail
 def show(node):

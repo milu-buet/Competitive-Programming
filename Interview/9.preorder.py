@@ -56,6 +56,10 @@ class Preorder(object):
 
 
 
+
+
+
+
 class Iterator_stack(object):
 	"""docstring for Iterator"""
 	def __init__(self, root):
@@ -140,6 +144,9 @@ while it.hasnext():
 	#print(it.peek())
 	#print(it.peek())
 	print(it.next())
+
+
+
 
 
 		

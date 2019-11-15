@@ -228,6 +228,8 @@ class HasHTable():
 
 
 
+
+
 d = HashTable()
 d.add('abc',5)
 d.add('abcd',6)
@@ -237,6 +239,8 @@ print(d.get('abcd'))
 d.remove('abc')
 print(d.get('abc'))
 print(d.get('abcd'))
+
+
 
 
 

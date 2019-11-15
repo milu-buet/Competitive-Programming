@@ -1,0 +1,29 @@
+
+Process:
+a process is a program in execution
+
+Inside Process or Process Control Block:
+1. Code text
+2. Program Counter: next instruction pointer
+3. Registers: accumulators, index registers, stack pointers, and general-purpose registers
+4. Stack: temporary data such as function parameters, return addresses, and local variables
+5. data section: global variables
+6. heap: dynamically allocated memory
+7. CPU-scheduling information: process priority, pointers to scheduling queues, and any other scheduling parameters
+8. Memory-management information.
+9. Accounting information
+10. I/O status information
+
+
+Process States:
+1. New: The process is being created.
+2. Running: Instructions are being executed.
+3. Waiting: The process is waiting for some event to occur (such as an I/O completion or reception of a signal).
+4. Ready: The process is waiting to be assigned to a processor.
+5. Terminated: The process has finished execution.
+
+Inter Process Communication: Pipes, files, socket, RPC
+
+
+https://iips.icci.edu.iq/images/exam/Abraham-Silberschatz-Operating-System-Concepts---9th2012.12.pdf
+https://nikgrozev.com/2015/07/14/overview-of-modern-concurrency-and-parallelism-concepts/

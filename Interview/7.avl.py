@@ -177,3 +177,109 @@ print("Preorder traversal of the",
       "constructed AVL tree is") 
 myTree.preOrder() 
 print() 
+
+
+class AVL(object):
+	"""docstring for AVL"""
+	def __init__(self):
+		pass
+
+
+	def insert(self, root, val):
+		if root is None:
+			return Node(val)
+		elif val == root.val:
+			return root
+		elif val < root.val:
+			root.left = self.insert(root.left, val)
+		elif val > root.val:
+			root.right = self.insert(root.right, val)
+
+
+		root.h = 1 + max( self.geth(root.left), self.geth(root,right) )
+
+		balance = self.geth(root.left) - self.geth(root.right)
+
+		if balance > 1 and root.left and  val < root.left.val:
+			root = self.rr(root)
+		elif balance > 1 and root.left and val > root.left.val:
+			root.left = self.lr(root.left)
+			root = self.rr(root)
+		elif balance <-1 and root.right and val > root.right.val:
+			root = self.lr(root)
+		elif balance <-1 and root.right and val < root.right.val:
+			root.right = self.rr(root.right)
+			root = self.lr(root)
+		return root
+
+
+	def delete(self, root, val):
+
+		if root is None:
+			return None
+		elif val < root.val:
+			root.left = self.delete(root.left, val)
+		elif val > root.val:
+			root.right = self.delete(root.right, val)
+		elif root.left is None:
+			return root.right 
+		elif root.right is None:
+			return root.left
+		else:
+			mval = self.getminval(root.right)
+			root.val = mval
+			root.right = self.delete(root.right, mval)
+
+		root.h = 1 + max( self.geth(root.left), self.geth(root,right) )
+
+		balance = self.geth(root.left) - self.geth(root.right)
+
+		if balance > 1 and root.left and  val < root.left.val:
+			root = self.rr(root)
+		elif balance > 1 and root.left and val > root.left.val:
+			root.left = self.lr(root.left)
+			root = self.rr(root)
+		elif balance <-1 and root.right and val > root.right.val:
+			root = self.lr(root)
+		elif balance <-1 and root.right and val < root.right.val:
+			root.right = self.rr(root.right)
+			root = self.lr(root)
+		return root
+
+
+'''
+    z
+   / \
+  y	  T3 
+ / \
+T1  T2
+
+
+    y
+   / \
+  T1  z
+     / \
+    T2  T3  
+'''
+
+
+
+	def rr(self, root):
+		z = root
+		y = root.left
+		
+		T2 = y.right
+		y.right = z
+		z.left = T2
+
+		y.h = 1 + max( self.geth(y.left), self.geth(y.right) )
+		z.h = 1 + max( self.geth(z.left), self.geth(z.right) )
+
+		return y
+
+
+
+
+
+
+

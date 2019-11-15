@@ -1,0 +1,27 @@
+
+
+1. Subset Sum
+2. Knapsack 
+3. CoinChange
+4. TSP - Shortest Path Visiting All Nodes
+
+
+
+5. Longest Common Subsequence  [ T(n,m) = O(nm), S(n,m) = O(n*m)] 
+6. Longest Increasing Subsequence [ T(n) = nlogn, S(n) = O(n)) ]
+7. Edit Distance
+8. Minimum Partition
+9. Ways to Cover a Distance
+10. Longest Path In Matrix
+11. Optimal Strategy for a Game
+12. Boolean Parenthesization Problem
+13. Shortest Common Supersequence
+14. Matrix Chain Multiplication , Ballon burst
+15. Partition problem
+16. Rod Cutting
+17. Coin change problem
+18. Word Break Problem
+19. Maximal Product when Cutting Rope
+20. Dice Throw Problem
+21. Box Stacking
+22. Egg Dropping Puzzle
