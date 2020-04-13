@@ -1,0 +1,38 @@
+
+SQL:
+*  Mysql, Postgres, Oracle
+*  ACID property is maintained: Atomicity, Consistency, Isolation, Durability
+							- Financial transaction 
+							- Lot of insert update delete
+*  Table based, exatact schema needed
+*  Not easy to scale, vertically scalable
+*  good fit for complex queries
+*  changing schema is costly and risky
+
+
+
+NoSQL: 
+* Cassandra, Mongo, Redis
+* No fixed schema needed
+* Consistency is not gurranteed, availability over consistency
+				- Not for financial transactions
+* No efficient joins
+* Not good fit for complex queries
+* Easy to scale, horizontally scalable
+* hash-based, graph based
+
+
+
+Sharding:
+	- segment database table for horitzontal scaling
+
+
+
+Indexing:
+To access the data faster
+Clustered: sorting the actual table based on indexing column
+non-clustered: seprate table holds sorted indexing_column-primary_key
+
+
+Consistent Hashing:
+Consistent hashing solves the problem of rehashing by providing a distribution scheme which does not directly depend on the number of servers.

@@ -36,33 +36,33 @@ class Solution(object):
     def quickselect(self, nums, beg, end, k):  # find kth smallest element
         
         pi = self.randpartition(nums, beg, end)
-        if pi-beg == k-1:
+        n = pi-beg+1
+
+        if n == k:
             return nums[pi]
-        elif pi-beg > k-1:
+        elif n > k:
             return self.quickselect(nums, beg, pi-1, k)
         else:
-            return self.quickselect(nums, pi+1, end, k-1 -pi+beg)
+            return self.quickselect(nums, pi+1, end, k - n)
 
 
-    def qkita(self, nums, k):
+    def qslita(self, nums, k):
 
         beg = 0
         end = len(nums)-1
-
-        while beg < end:
+        while True:
             pi = self.randpartition(nums, beg, end)
-            if pi-beg == k-1:
-                return nums[pi]
-            elif pi-beg > k-1:
+            n = pi-beg+1
+
+            if n==k:
+                break
+            if n>k:
                 end = pi-1
             else:
                 beg = pi+1
-                k = k-(pi-beg+1)
+                k-=n
 
-        if k==1:
-            return nums[lo]
-
-        return None
+        return nums[pi]
 
 
     def randpartition(self, nums, beg, end):
@@ -75,18 +75,18 @@ class Solution(object):
     def partition(self, nums, beg, end):
         pi = end
         pivot  = nums[pi]
-        i = beg-1 # how many elements ae smaller
+        i = beg # how many elements ae smaller
         for j in range(beg,end):
             if nums[j] < pivot:
-                i+=1
                 nums[i],nums[j] = nums[j],nums[i]
-        nums[i+1],nums[end] = nums[end],nums[i+1]
-        return i+1
+                i+=1
+        nums[i],nums[end] = nums[end],nums[i]
+        return i
 
 
 
 A = [3,2,1,5,6,3,2]
 #Solution().sort(A,0,len(A)-1)
-Solution().sortIta(A)
+Solution().quicksortIta(A)
 print(A)
 

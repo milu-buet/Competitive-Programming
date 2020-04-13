@@ -6,7 +6,7 @@
 pat = A A B X A A A A
 lps = 0 1 0 0 1 2 2 2
 '''
-def LPS2(pat): 
+def LPS(pat): 
 	n = len(pat)
 	lps = [0]*n
 	j=0
@@ -28,15 +28,15 @@ def LPS2(pat):
 
 def KMP(txt, pat):
 
-	lps = LPS2(pat)
+	lps = LPS(pat)
 
 	
 
 
-print(LPS2('ABXAB'))
-print(LPS2('ABAB'))
-print(LPS2('ABABCABAB'))
-print(LPS2('ACAAA'))
+print(LPS('ABXAB'))
+print(LPS('ABAB'))
+print(LPS('ABABCABAB'))
+print(LPS('ACAAA'))
 
 
 

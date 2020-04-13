@@ -1,0 +1,198 @@
+
+#################################################################################
+DFS:
+1. Remove k digit so that result is the minimum
+2. Tower of hanoi
+
+
+#################################################################################
+Tree:
+1. AVL tree
+2. Trie
+2. Check if a BST is balanced
+3. Validate BST node values
+3. Create a BST with minimal height, given sorted array
+4. Next node of inorder traversal, parent node given.
+5. If tree2 is a subtree of a tree1
+6. If a path sum from root to leaf BT
+7. Compute kth node inorder BT
+8. Find a tree path with longest total value
+9. Print highest value of each height
+10. Right side view of a tree
+11. issymmetric tree
+12. BST level order traversal
+13. Find first key greater than a number in BST
+14. Find k longest number in a BST
+15. LCA of a BST
+16. Build a BST from preorder sequence
+17. 3 nodes given in a BST, find if b in between a and c
+18. Range look up problem in a BST 
+19. smallest node in a tree
+20. Find Lowest Common Ancestor of two nods in a BST
+21. Find Lowest Common Ancestor of two nods in a BT
+22. Find Lowest Common Ancestor of two nods in a BT, parent pointer given
+23. Print post order without recursion
+
+####################################################################################
+Graph:
+1. Shortest Path
+2. DSU
+3. Cycle detection in undirected graph
+4. Cycle detection in directed graph
+5. Topological sort
+6. Articulation point
+7. Bridge
+8. Given lists of directed edges, find number of pairs of reciprocal edges
+
+
+####################################################################################
+NP-complete:
+1. Knapsack
+2. SubsetSum
+3. Coinchange
+4. TSP
+5. Matrix Chain
+6. Box Stacking
+7. Minimum Partition
+8. Burst Balloons
+
+
+######################################################################################
+BackTrack:
+1. N queen problem
+2. search a word in a matrix
+3. Search a list of word in a matrix
+4. Sudoku solver
+5. Length of longest increasing path in a matrix
+
+
+
+#######################################################################################
+DP:
+1. LIS 
+2. LCS 
+3. Edit Distance
+4. Combinaton sum , nums =[1,2,3], n = 4,  ans: 7 (1,1,1,1) (1,1,2) (1,2,1)
+5. Russian Doll Envelopes
+6. Jump Game
+7. Word break problem
+8. Count numbe of score combination get 12 by using 2,3,7
+9. How many path from top left to bottom right position of a matrix
+10. How many distinct subsequences , s=rabbbit, t = rabbit will return 3
+11. Length of longest consecutive numbers in a vector - 4,100,2,20,1,3 will return 4
+12. Climb stairs upto n. Destination is at d.
+
+
+########################################################################################
+Sorting:
+1. Merge sort
+2. Quick sort
+3. Sort a stack
+4. Find kth largest element in an unsorted array - quick select
+5. Compute median of online data
+6. Merge k sorted sequence
+7. Median of two sorted arrays
+8. Sort an almost sorted array - insertion sort
+9. Find k largest elements
+10. Find first k in a sorted array
+11. Search a sorted array for entry equal index
+12. Search minimum element in cyclically sorted array/ with repeatation
+13. Implement max in stack
+14. k longest string
+
+
+########################################################################################
+Binary Search:
+1. Search an element in a rotated sorted array
+2. Find min in a rotated sorted array
+3. search in 2d matrix, row and column are sorted
+
+########################################################################################
+String:
+1. KMP - Knuth Morris Pratt
+2. Rabin-Karp
+3. Aho-Corasick
+4. Z algorithm
+5. Manacher’s algorithm
+6. Longest common phrases length between 2 words
+7. Longest palindromic sequence length in a string  bbbab will return 4.
+8. Replace all spaces with ab in a string; isSubstr is available, only call once to check rotation also.
+9. Permute a string / vector of int
+10. Next permuation
+11. Check if a string can be permuted to a palindromic string
+12. If a string can be broken into dictionary words
+13. Generate all palindromic decomposition  0204451881 -> (020,44,5,1881)  (020,44,5,1,88,1)
+14. If 2 strings are scrambled. Same number of characters.
+15. Reverse words in sentence “there is a tree” “tree a is there”
+16. Find if 2 strings are isomorphic
+
+##########################################################################################
+Two Pointers:
+1. m 0s and n 1s given. Find Max strings from a list with m 0 and n 1.
+2. Find longest increasing sequence of integers in an array.
+3. Length of longest substring without repeated character
+4. Find length of longest consecutive numbers in a vector
+5. Minimum continious element to get a sum [2,3,1,2,4,3] s = 7. Output: 2 [4,3]
+
+
+###########################################################################################
+LinkedList:
+1. If linked list has a cycle
+2. find starting point of a cycle of linked list
+3. Intersection of 2 linkedlists
+4. Remove nth node from last from linked list
+5. Merge 2 sorted linked lists
+6. Remove duplicate from a linked list  (only 1 will be there)
+7. Reverse a linked list
+8. Palindromic linked list check
+9. Odd even linked list
+10. Rotate right liked list
+11. Remove duplicates from a linked lists (all elements) 
+12. Reverse node in k group in a linked list
+
+
+###############################################################################################
+Adhoc:
+1. Find Maximum number of  event at a time in calendar
+2. Compute maximum water trapped
+3. Maximum sub array sum
+4. Implement min function in a stack
+5. Implement a queue using 2 stacks.
+6. Get all subsets of an int vector
+7. Return all valid parentheses of a length
+8. Longest valid parentheses length 
+9. Print all possible valid parenthesis
+10. Count all possible walk from i to j with k hop
+11. Perfect square ; 13,return 2 as 13 = 9+4
+12. int vector is given. Find product of number except itself.
+13. Pow(x,n)
+14. Convert excel to number AA- 27 ZZ - 702
+16. Print matrix spiral order
+17. Compute n choose k.
+18. Place same anagram string together
+19. Find k most frequent elements
+20. The Skyline Problem
+21. Matrix rotate
+22. 2 sum problems for sorted array
+23. 3 sum problems
+24. Find k most frequent elemtn
+25. Find majority candidate - more's
+
+
+
+
+
+Page 47 - Triplet increasing sequence
+Page 53 - Count total number with n digit
+Page 61 - Swap nodes in pair
+Page 79 - Decode ways, A-1 , z-26  12 will return 2 [AB,L]
+Page 83 - Multiply 2 integer in int vector
+Page 83 - Buy and sell stock twice
+Page 89 - Test if ( ) { } [ ] are well formed
+Page 92 - Sort by name
+Page 92-93 - Remove first name duplicates
+Page 103 - Find LCA of 2 nodes, parents given
+Page 107 - Compute highest 3 scrores of each student
+Page 126 - Graph if team A beats team B
+Page 130 - Transform one work to another, only one letter can be changed
+Page 141 - LCA using hash table

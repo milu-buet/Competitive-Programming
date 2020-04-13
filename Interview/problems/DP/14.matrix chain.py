@@ -28,14 +28,11 @@ def solve(A):
 		dp[(i,i)] = 0
 
 	for size in range(2,n+1):
-		for i in range(1,n+2-size):
+		for i in range(1,n-size+1+1):
 			j = i+size-1
-			if i==j:
-				dp[(i,j)] = 0
-			else:
-				dp[(i,j)]= float('inf')
-				for k in range(i,j):
-					dp[(i,j)] = min( dp[(i,j)], dp[(i,k)] + dp[(k+1,j)] + A[i-1]*A[k]*A[j] )
+			dp[(i,j)]= float('inf')
+			for k in range(i,j):
+				dp[(i,j)] = min( dp[(i,j)], dp[(i,k)] + dp[(k+1,j)] + A[i-1]*A[k]*A[j] )
 
 	return dp[(1,n)]
 
@@ -62,5 +59,5 @@ f(1,n) = ?
 
 '''
 
-def solve(A):
+#def solve(A):
 

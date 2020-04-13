@@ -9,10 +9,6 @@
 # O(1) aux space
 
 
-#online sorting
-
-
-
 # MergeSort: Stable, not-inplace
 # T(n) = 2*T(n/2) + theta(n) = theta(nlogn)
 # S(n) = stack+merge = O(n)

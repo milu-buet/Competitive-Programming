@@ -56,6 +56,8 @@ class Inorder(object):
 					pred.right = None
 
 
+
+
 class Iterator_stack(object):
 	"""docstring for Iterator"""
 	def __init__(self, root):

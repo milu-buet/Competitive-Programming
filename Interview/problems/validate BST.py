@@ -17,15 +17,15 @@ class Solution(object):
         
         mn = float('-inf')
         mx = float('inf')
-        stack = [(root, mx, mn)]
+        stack = [(root, mn, mx)]
         
         while stack:
-            node, mx, mn = stack.pop()
-            if node.val >= mx or node.val <= mn:
+            node, mn, mx = stack.pop()
+            if node.val <= mn or node.val >= mx :
                 return False
             if node.right:
-                stack.append((node.right, mx, node.val))
+                stack.append((node.right, node.val, mx))
             if node.left:
-                stack.append((node.left, node.val, mn))
+                stack.append((node.left, mn, node.val))
         return True
                 

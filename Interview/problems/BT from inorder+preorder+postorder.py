@@ -1,12 +1,13 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 # preorder = [3,9,20,15,7]
 # inorder = [9,3,15,20,7]
+
 # preorder+inorder
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
@@ -27,6 +28,36 @@ class Solution:
         root.left = self.construct(preorder, inorder, ni, ind-1, index)
         root.right = self.construct(preorder, inorder, ind+1, nj, index)      
         return root
+
+
+    def build(self, preorder, inorder):
+
+        if len(inorder) == 0:
+            return None
+
+        index = {}
+        for i,val in enumerate(inorder):
+            index[val] = i
+
+        self.i = 0
+        return self.construct(preorder, inorder, 0, len(inorder)-1, index)
+
+
+    def construct(self, preorder, inorder, ni, nj, index):
+        if ni > nj:
+            return None
+
+        val = preorder[self.i]
+        root = Node(val)
+        ind = index[val]
+        self.i += 1
+        
+        root.left = self.construct(preorder, inorder, ni, ind-1, index) 
+        root.right = self.construct(preorder, inorder, ind+1, nj, index)
+
+        return root
+
+
 
 # postorder+inorder
 class Solution:
@@ -75,29 +106,4 @@ class Solution:
 
 
 
-
-def prepost(pre, post):
-
-    if len(pre) == 0:
-        return None
-
-    index = {}
-    for i in range(len(post)):
-        index[post[i]] = i 
-
-    self.c = 0
-
-    return construct(pre, post, 0, len(post), index)
-
-
-def construct(pre, post, i, j, index):
-    
-    if i>j:
-        return None
-
-    
-    node = TreeNode(pre[self.c])
-    self.c+=1
-
-    ind = index[pre[self.c]]
 

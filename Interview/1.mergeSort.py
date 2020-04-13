@@ -7,7 +7,9 @@ class Solution(object):
         if n<=1:
             return nums
         #self.mergesort(nums, 0, n-1)
-        self.mergesortIta(nums)
+        #self.mergesortIta(nums)
+        #self.sort(nums, 0, n-1)
+        self.ita(nums)
         return nums
     
     def mergesort(self, nums, beg, end):
@@ -51,6 +53,7 @@ class Solution(object):
             j+=1
             
         nums[beg:end+1] = temp
+
 
 
 

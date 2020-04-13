@@ -44,7 +44,7 @@ def subset(arr):
 
 
 #print(subset([1,2,3]))
-print(perm('abcd'))
+print(Solution().permute(['a','b','c']))
 
 
 

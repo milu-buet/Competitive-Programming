@@ -1,0 +1,24 @@
+
+Problem: Design google search auto complete feature.
+
+Features:
+1. Response time: It needs to be quick and available
+2. Relevant suggestion / Contexual
+3. sorted by Popularity
+4. Only english
+
+
+Idea steps:
+1. Use Trie to search relevant answers the sort it according to popularity. O(L)
+2. We can improve time: precompute and save answers for all the prefix
+3. Use noSQL database/ memchached to save all the answers
+4. NoSQL is appropiate
+5. A mechanism is needed to update popularity hence update saved answers.
+6. New keys are coming, we need more prefix entries hence update saved answers.
+
+
+
+
+
+
+

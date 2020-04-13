@@ -4,7 +4,7 @@
 
 def calc(n,k):
 	if k > n-k:
-		k - n-k
+		k = n-k
 
 	ans = 1
 

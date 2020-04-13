@@ -1,0 +1,19 @@
+
+1. Autocomplete
+2. Url shortner/ Tiny url
+3. Parking lot
+4. Design uber
+5. Chat/messanging service
+6. 
+
+
+
+What to do?
+1. Make a list of features
+2. Possible system capacity, number of requests, number of users, storage capacity
+3. Data structure
+4. Class diagram
+5. System diagram
+6. Technology stack
+
+

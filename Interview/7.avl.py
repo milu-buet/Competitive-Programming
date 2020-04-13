@@ -182,13 +182,12 @@ print()
 class AVL(object):
 	"""docstring for AVL"""
 	def __init__(self):
-		pass
-
+		self.root = None
 
 	def insert(self, root, val):
 		if root is None:
 			return Node(val)
-		elif val == root.val:
+		elif root.val == val:
 			return root
 		elif val < root.val:
 			root.left = self.insert(root.left, val)
@@ -196,22 +195,24 @@ class AVL(object):
 			root.right = self.insert(root.right, val)
 
 
-		root.h = 1 + max( self.geth(root.left), self.geth(root,right) )
+		lefth = self.geth(root.left)
+		righth = self.geth(root.right)
+		root.height = 1 + max(lefth, righth)
 
-		balance = self.geth(root.left) - self.geth(root.right)
+		balance = lefth - righth
 
-		if balance > 1 and root.left and  val < root.left.val:
+		if balance > 1 and root.left and val < root.left.val:
 			root = self.rr(root)
 		elif balance > 1 and root.left and val > root.left.val:
 			root.left = self.lr(root.left)
 			root = self.rr(root)
-		elif balance <-1 and root.right and val > root.right.val:
+		elif balance < -1 and root.right and val > root.right:
 			root = self.lr(root)
-		elif balance <-1 and root.right and val < root.right.val:
+		elif balance < -1 and root.right and val < root.right:
 			root.right = self.rr(root.right)
 			root = self.lr(root)
-		return root
 
+		return root
 
 	def delete(self, root, val):
 
@@ -221,34 +222,43 @@ class AVL(object):
 			root.left = self.delete(root.left, val)
 		elif val > root.val:
 			root.right = self.delete(root.right, val)
-		elif root.left is None:
-			return root.right 
-		elif root.right is None:
-			return root.left
-		else:
-			mval = self.getminval(root.right)
+		elif val == root.val and root.left is None:
+			return root.right
+		elif val == root.val and root.right is None:
+			return root.left 
+		elif val == root.val:
+			mval = self.getmin(root.right)
 			root.val = mval
 			root.right = self.delete(root.right, mval)
+		
+		lefth = self.geth(root.left)
+		righth = self.geth(root.right)
+		root.height = 1 + max(lefth, righth)
 
-		root.h = 1 + max( self.geth(root.left), self.geth(root,right) )
+		balance = lefth - righth
 
-		balance = self.geth(root.left) - self.geth(root.right)
-
-		if balance > 1 and root.left and  val < root.left.val:
+		if balance > 1 and root.left and val < root.left.val:
 			root = self.rr(root)
 		elif balance > 1 and root.left and val > root.left.val:
 			root.left = self.lr(root.left)
 			root = self.rr(root)
-		elif balance <-1 and root.right and val > root.right.val:
+		elif balance < -1 and root.right and val > root.right:
 			root = self.lr(root)
-		elif balance <-1 and root.right and val < root.right.val:
+		elif balance < -1 and root.right and val < root.right:
 			root.right = self.rr(root.right)
 			root = self.lr(root)
+
 		return root
 
 
+	def geth(self, node):
+		if node is None:
+			return 0
+		return node.height
+
+
 '''
-    z
+    x
    / \
   y	  T3 
  / \
@@ -257,26 +267,63 @@ T1  T2
 
     y
    / \
-  T1  z
+  T1  x
      / \
     T2  T3  
 '''
 
 
 
-	def rr(self, root):
-		z = root
-		y = root.left
-		
-		T2 = y.right
-		y.right = z
-		z.left = T2
+	def rr(self, x):
 
-		y.h = 1 + max( self.geth(y.left), self.geth(y.right) )
-		z.h = 1 + max( self.geth(z.left), self.geth(z.right) )
+		y = x.left 
+		T1 = y.left
+		T2 = y.right 
+		T3 = x.right
+
+		y.right = x
+		x.left = T2
+
+		x.height = 1 + max(self.geth(T2), self.geth(T3))
+		y.height = 1 + max(self.geth(T1), self.geth(x))
 
 		return y
 
+'''
+
+    x
+   / \
+  T1  y
+     / \
+    T2  T3  
+
+
+    y
+   / \
+  x	  T3 
+ / \
+T1  T2
+
+
+
+'''
+
+
+
+	def lr(self, x):
+		
+		y = x.right 
+		T1 = x.left 
+		T2 = y.left 
+		T3 = y.right 
+
+		y.left = x
+		x.right = T2
+
+		x.height = 1 + max(self.geth(T1), self.geth(T2))
+		y.height = 1 + max(self.geth(x), self.geth(T3))
+
+		return y
 
 
 

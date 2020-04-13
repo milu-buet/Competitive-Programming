@@ -1,15 +1,16 @@
+# T(n) : find = O(logn) for single call. But almost constant 
 
-
-class DCU(object):
+class DSU(object):
 	"""docstring for DCU"""
 	def __init__(self, n):
 		self.A = list(range(n))
 		self.rank = [1]*n
 
 	def find(self, x):
+		print(x)
 		if self.A[x] != x:
-			x = self.find(self.A[x])
-		return x
+			self.A[x] = self.find(self.A[x])
+		return self.A[x]
 
 	def add(self, x, y):
 		xroot = self.find(x)
@@ -25,7 +26,8 @@ class DCU(object):
 
 
 	def isSameSet(self, x, y):
-		self.find(x) == self.find(y)
+		return self.find(x) == self.find(y)
+
 
 
 a = DCU(10)

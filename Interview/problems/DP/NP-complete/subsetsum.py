@@ -20,7 +20,7 @@ class Solution(object):
 		return self.dfs(nums, i+1, sm+nums[i], k) or self.dfs(nums, i+1, sm, k)
 
 
-#    0  1  2  3
+#    0  1  2  3 ->sum
 # 0  t  f  f  f
 # 1  t
 # 2  t
@@ -28,6 +28,7 @@ class Solution(object):
 # 4  t
 # 5  t
 # 6  t
+
 
 # F(i,j) = F(i-1, j) or F(i-1, j - A[i-1])
 
@@ -80,6 +81,68 @@ k = 8
 print(Solution().dfs(A,0,0,k))
 print(Solution().solveDP2(A,k))
 print(Solution().solveDP_repeated(A,k))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+def sssum(A, k):
+	N = len(A)
+
+	Table = [[False for j in range(k+1)] for i in range(2)]
+	for i in range(2):
+		Table[i][0] = True
+
+	top = 0
+	bottom = 1
+	for i in range(1,N+1):
+		for j in range(1,k+1):
+			Table[bottom][j] = Table[top][j]
+			if j>=A[i-1]:
+				Table[bottom][j] = Table[bottom][j] or Table[top][j-A[i-1]]
+		top ^= 1
+		bottom ^= 1
+
+	return Table[top][k]
+
+
+def sssumR(A, k):
+	Table = [False for i in range(k+1)]
+	Table[0] = True
+
+	for i in range(1,k+1):
+		for j in range(len(A)):
+			if i>=A[j]:
+				Table[i] = Table[i] or Table[i-A[j]]
+
+	return Table[k]
+
+
+print(sssum([1,5,3,8,6], 300))
+
 
 
 		
