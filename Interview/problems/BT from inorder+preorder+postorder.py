@@ -30,35 +30,6 @@ class Solution:
         return root
 
 
-    def build(self, preorder, inorder):
-
-        if len(inorder) == 0:
-            return None
-
-        index = {}
-        for i,val in enumerate(inorder):
-            index[val] = i
-
-        self.i = 0
-        return self.construct(preorder, inorder, 0, len(inorder)-1, index)
-
-
-    def construct(self, preorder, inorder, ni, nj, index):
-        if ni > nj:
-            return None
-
-        val = preorder[self.i]
-        root = Node(val)
-        ind = index[val]
-        self.i += 1
-        
-        root.left = self.construct(preorder, inorder, ni, ind-1, index) 
-        root.right = self.construct(preorder, inorder, ind+1, nj, index)
-
-        return root
-
-
-
 # postorder+inorder
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:

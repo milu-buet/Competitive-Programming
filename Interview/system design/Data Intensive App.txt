@@ -1,0 +1,96 @@
+https://unidel.edu.ng/focelibrary/books/Designing%20Data-Intensive%20Applications%20The%20Big%20Ideas%20Behind%20Reliable,%20Scalable,%20and%20Maintainable%20Systems%20by%20Martin%20Kleppmann%20(z-lib.org).pdf
+
+Data Intensive App:
+
+
+*******************************************************
+Chapter 3: Storage and Retrieval
+
+* Database Index
+	- An index is an additional structure that is derived from the primary data.
+	- Make searching faster
+	- Any kind of index usually slows down writes, because the index also needs to updated every time data is written.
+	- By default indexing is not applied for all data, it's the developer responbility to find good index to make searching faster.
+
+
+* Hash Index
+* SStables Index (Sorted String Table)
+* LSM-tree
+* B-Trees
+	- Most commonly used indexing. Used in DynamoDb sort key
+	- https://www.youtube.com/watch?v=K1a2Bk8NrYQ
+
+Chapter 5: Replication
+
+* Single Leader Replication
+ - DynamoDB uses
+ - most common
+ - One leader, several followers
+ - Write only happens through leader. Read can happen at any replica.
+
+****
+ Issue 1: Synchronous replica vs Asynchronous replica
+  - Synchronous: Write op, waits for replica operation to be complete
+  	- If all flowwers are sync, then one follower failure causes the whole write op to fail. until a replacement node appear.
+  	- Slow write op
+
+  - Asynchronous: Write op does not wait for replica to be complete.
+    - If all followers are async, then if leader fails, then data loss may occur.
+    - Fast write op.
+
+  In practice, some followers are Synchronous, some are Asynchronous.
+********
+Leader Failure:
+* Failure detection
+ - Too delay loss of data, too early too spiky.
+* Find new leader
+ - Node with most recent data should be the leader.
+* reconfig the new leader for all
+	- Old leader still may believe it is the leader. It is called split brain issue.
+
+ - 
+* Multi Leader Replication
+	- Not used much.
+* Leaderless Replication
+	- Not very popular
+
+
+
+***************************************************
+Chapter 6: Partitioning
+
+* Key range Partition
+ - Sorted keys
+ - Easy for range query
+ - hot partition issue
+
+* Hash Partitioning
+ - Sorting is lost. Range qury is inefficient
+ - load is distributed
+ 
+
+ Local Index
+  - secondary index is stored in the same partition
+  - write is easy for one node
+  - but read needs scatter/gather
+
+Global Index
+  - secondary index is partitioned separately
+  - write needs many primary partion update.
+  - read is easy in one partition
+
+
+  number of partition >> number of nodes
+
+
+****************************************************
+Chapter 9: Consistency and Consensus
+
+* Linearizability = Strong Consistency - Immediate Consistency
+	- make a system appear as if there is only a single copy of the data.
+	- The recent data is guranteed
+
+* CAS(x, v_old, v_new) - compare-and-set operation
+
+* Implement Linearizability
+ - 

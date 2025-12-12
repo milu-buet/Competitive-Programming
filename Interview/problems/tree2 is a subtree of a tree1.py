@@ -13,7 +13,7 @@ def eqTree(t1, t2):
 	return t1.val == t2.val and eqTree(t1.left, t2.left) and eqTree(t1.right, t2.right)
 
 
-
+# if t2 is a subtree of t1
 def isSubtree(t1, t2):
 
 	if t2 is None:

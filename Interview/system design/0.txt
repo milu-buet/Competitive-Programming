@@ -1,0 +1,73 @@
+
+https://jobs.ashbyhq.com/hiya/5d361735-05a7-4c95-9299-9c59ba9cdd94?departmentId=5fa14482-214b-4ffe-9bcd-ba8294e35be2&embed=js
+
+https://unidel.edu.ng/focelibrary/books/Designing%20Data-Intensive%20Applications%20The%20Big%20Ideas%20Behind%20Reliable,%20Scalable,%20and%20Maintainable%20Systems%20by%20Martin%20Kleppmann%20(z-lib.org).pdf
+
+What to know:
+
+Database:
+1.
+
+
+LoadBalancer:
+1. https://avinetworks.com/what-is-load-balancing/
+
+Asyncworkers: RabbitMQ
+1. https://www.cloudamqp.com/blog/2016-09-13-asynchronous-communication-with-rabbitmq.html
+
+
+Caching:
+1.
+
+
+Distributed File System-HDFS
+1. NTFS = New Technology File System
+2. DFS = Distributed File System
+3. HDFS = Hadoop Distributed File System
+4. https://www.youtube.com/watch?v=LcuT0ynb_ks
+
+
+health check
+https://medium.com/glovo-engineering/meaningful-web-service-health-checks-e975321ac229
+
+
+➤ Core Distributed Systems & Scalability
+
+1. How do I decide when to split a monolith into services?
+2. How does a request flow end-to-end through a production system?
+3. How do I design a service that can handle 10x more traffic with minimal changes?
+4. What are the real trade-offs between vertical and horizontal scaling?
+5. How do I choose between synchronous and asynchronous communication?
+6. When should I use a queue vs direct RPC?
+7. How do I design for backpressure in a high-traffic system?
+8. How do I protect downstream services from traffic spikes?
+9. How do I design APIs so they can evolve without breaking clients?
+10. How do I handle idempotency for write APIs?
+
+➤ Data Modeling, Storage & Indexing
+11. How do I model data differently for OLTP vs OLAP workloads?
+12. How do I decide between SQL, NoSQL, and search engines?
+13. How do I shard data — by user, tenant, region, or something else?
+14. What does a good partition key look like in a distributed store?
+15. How do I avoid hot partitions and skew?
+16. How should I index for read-heavy vs write-heavy workloads?
+17. How do I design soft delete, archival, and retention?
+18. How do I handle multi-tenant data isolation?
+19. How do I design a migration strategy for a huge table?
+20. How do I safely backfill data in production?
+
+➤ Caching & Performance
+21. Where should I cache — client, edge, service, DB layer?
+22. How do I pick between write-through, write-back, and write-around caching?
+23. How do I design cache invalidation rules that don’t become a nightmare?
+24. How do I handle cache stampede and thundering herd?
+25. What is my caching story for hot keys and large objects?
+26. How do I measure whether a cache is actually helping?
+27. How do I design pagination for massive datasets efficiently?
+28. How do I design rate limiting that doesn’t break good users?
+
+➤ Consistency, Availability & Transactions
+29. When do I accept eventual consistency vs strict consistency?
+30. How do I model consistency levels across services and data stores?
+31. How do I implement distributed transactions without 2PC pain?
+32. How do I design an outbox/inbox pattern for reliable events?

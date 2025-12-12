@@ -1,0 +1,418 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"n",
+				"nums_list"
+			],
+			[
+				"fi",
+				"fibo_file"
+			],
+			[
+				"co",
+				"country"
+			],
+			[
+				"data",
+				"data_view"
+			],
+			[
+				"p",
+				"population_density_list"
+			],
+			[
+				"po",
+				"population_list"
+			],
+			[
+				"all",
+				"all_avg"
+			],
+			[
+				"max",
+				"max_month"
+			],
+			[
+				"ra",
+				"rain_counts"
+			],
+			[
+				"mi",
+				"min_temps"
+			],
+			[
+				"ma",
+				"max_temps"
+			],
+			[
+				"mo",
+				"months"
+			],
+			[
+				"mon",
+				"months"
+			],
+			[
+				"c",
+				"candidate"
+			],
+			[
+				"x",
+				"xparent"
+			],
+			[
+				"y",
+				"yparent"
+			],
+			[
+				"quick",
+				"quickselect"
+			],
+			[
+				"va",
+				"var_list"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"v",
+				"vtypes"
+			],
+			[
+				"exp",
+				"exp2"
+			],
+			[
+				"get",
+				"get_vars"
+			],
+			[
+				"ne",
+				"new_cl"
+			],
+			[
+				"new",
+				"new_cl"
+			],
+			[
+				"f",
+				"found"
+			],
+			[
+				"cnf",
+				"cnf_new"
+			],
+			[
+				"cl",
+				"cl_new"
+			],
+			[
+				"cla",
+				"clause"
+			],
+			[
+				"el",
+				"elim"
+			],
+			[
+				"right",
+				"right_child"
+			],
+			[
+				"left",
+				"left_child"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/milu/New Volume1/pj/milu_test3/games/tests.py",
+		"/media/milu/New Volume1/pj/spark2/hello/h1.py",
+		"/media/milu/New Volume1/pj/spark2/Homeworks/hw4/hw4.py",
+		"/media/milu/New Volume1/pj/spark2/hello/prime.py",
+		"/media/milu/New Volume1/pj/spark2/hello/h2.py",
+		"/media/milu/New Volume1/pj/spark2/hello/h3.py",
+		"/media/milu/New Volume1/pj/spark2/Homeworks/hw1sub/hw1.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/NP-complete/coingchange.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/0All.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/1.mergeSort.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/0.utility.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/6.LIS.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/String/0.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/14.suffixtree.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/GRaph/3.toposort.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/GRaph/4. cycle in directed.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/16.DSU.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/GRaph/list.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/3.sortingFacts.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/77.RBTree.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/perm,subset.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/6.trie.py",
+		"/media/milu/New Volume/game/GTA San Andreas/saga/SummertimeSaga-0-20-16-pc/SummertimeSaga.py",
+		"/media/milu/New Volume/game/GTA San Andreas/saga/SummertimeSaga-0-20-16-pc/renpy/translation/dialogue.py",
+		"/home/milu/Desktop/CSC 110/Lab12/Lab12_part3_Rahman.py",
+		"/home/milu/Desktop/CSC 110/Lab12/Lab12_part2_Rahman.py",
+		"/home/milu/Desktop/CSC 110/Lab12/Lab12_part1_Rahman.py",
+		"/media/milu/New Volume/game/GTA San Andreas/saga/SummertimeSaga-0-20-16-pc/renpy/text/extras.py",
+		"/home/milu/Desktop/CSC 110/HW8/Rahman_HW8.py",
+		"/home/milu/Desktop/CSC 110/Lab13/Rahman_Lab12_Part2.py",
+		"/home/milu/Desktop/CSC 110/Lab13/Rahman_Lab12_Part1.py",
+		"/home/milu/Desktop/CSC 110/Lab12/data.txt",
+		"/home/milu/Desktop/CSC 110/HW7/HW7_Rahman.py",
+		"/home/milu/Desktop/CSC 110/Practice/python practice.py",
+		"/home/milu/Downloads/IMG_20200218_0004.jpg",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/all.bib",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/conclusion/conclusion.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/introduction/contrib.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/ack.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/conclusion/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/future/future.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/introduction/contrib.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/5cnf/5cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/6cnf/6cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/preface.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/preface.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/6cnf/6cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/3cnf/cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense 2/introduction/merge.tex",
+		"/media/milu/New Volume/pj/Competitive-Programming/test/tp.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/test/t9.py",
+		"/media/milu/New Volume/pj/Research/Final Defense/main.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/preface/conclusion.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/preface/merge.tex",
+		"/home/milu/Documents/Def/proposal/main.tex",
+		"/media/milu/New Volume/pj/Competitive-Programming/Research/cnf7.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Research/cnf2.py",
+		"/media/milu/New Volume/pj/robinhood/equity_value_data.csv",
+		"/media/milu/New Volume/pj/robinhood/test2.py",
+		"/media/milu/New Volume/pj/robinhood/test.py",
+		"/media/milu/New Volume/pj/robinhood/equity_value_data.csv/equity_value_data.csv",
+		"/media/milu/New Volume/pj/Research/Final Defense/all.bib",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/GRaph/bfs critical type",
+		"/media/milu/New Volume/pj/Research/Final Defense/5cnf/5cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/3cnf/cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/conclusion/conclusion.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/4cnf/4cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/abs.tex",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/3cnf/toc/tug.tex",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/Erdos-Selfridge/erdos.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/2cnf/2cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/erdos/erdos.tex",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/Erdos-Selfridge/erdos.bib",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/ISAAC/cnf.bib",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/8.minimum partition.py",
+		"/home/milu/Downloads/stacs22submission/erdos.tex",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/NP-complete/knapsack.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/mistack.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/system design/0.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/12. boolean parenthesis.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/14.matrix chain.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/system design/1.DB.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/system design/designs.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/system design/p1.text",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/orderSucc.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/7.avl.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/BST from preporder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/BT from inorder+preorder+postorder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/search in rotated.py",
+		"/media/milu/New Volume/pj/Research/Final Defense/future/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/conclusion/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/2cnf/merge.tex",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/ISAAC/cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/Introduction/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/erdos/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/ack.tex",
+		"/home/milu/Documents/Def/proposal/ack.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/4cnf/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/3cnf/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/5cnf/merge.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/chap1/contrib.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/6cnf/merge.tex",
+		"/media/milu/New Volume/pj/Research/Unordered CNF GAME/6cnf/6cnf.tex",
+		"/media/milu/New Volume/pj/Research/Final Defense/chap1/merge.tex",
+		"/home/milu/Documents/Def/proposal/abs.tex",
+		"/home/milu/Documents/MemphisThesisLatex/title.tex",
+		"/home/milu/Downloads/latex-template/ut-thesis-template/chapters/chapter-1.tex",
+		"/home/milu/Downloads/latex-template/ut-thesis-template/my-dissertation.tex",
+		"/home/milu/Documents/MemphisThesisLatex/thesis.tex",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/BST from postorder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/4.Given lists of directed edges, find number of pairs of reciprocal edges.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/16.Sort an almost sorted array.py",
+		"/media/milu/New Volume/pj/profile/index.html",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/1.word search.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/3.longest common substring.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/String/KMP.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/levelordertraversal.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/isMirrorTree.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/Sum Root to Leaf Numbers.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/tree2 is a subtree of a tree1.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/validate BST.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/17.bit.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/13.threading_basics.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/12.threadinglock.txt",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/11.postorder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/10.inorder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/9.preorder.py",
+		"/media/milu/New Volume/pj/Competitive-Programming/Interview/problems/DP/7.Edit Distance.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 107.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "cnf7.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 477.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -61,7 +61,7 @@ NP-complete:
 BackTrack:
 1. N queen problem
 2. search a word in a matrix
-3. Search a list of word in a matrix
+3. Search a list of words in a matrix
 4. Sudoku solver
 5. Length of longest increasing path in a matrix
 
@@ -151,17 +151,20 @@ LinkedList:
 12. Reverse node in k group in a linked list
 
 
+Stack & Queue:
+1. Monoqueue
+2. Implement min function in a stack
+3. Implement a queue using 2 stacks.
+
+
 ###############################################################################################
 Adhoc:
 1. Find Maximum number of  event at a time in calendar
 2. Compute maximum water trapped
 3. Maximum sub array sum
-4. Implement min function in a stack
-5. Implement a queue using 2 stacks.
 6. Get all subsets of an int vector
 7. Return all valid parentheses of a length
 8. Longest valid parentheses length 
-9. Print all possible valid parenthesis
 10. Count all possible walk from i to j with k hop
 11. Perfect square ; 13,return 2 as 13 = 9+4
 12. int vector is given. Find product of number except itself.
@@ -175,10 +178,7 @@ Adhoc:
 21. Matrix rotate
 22. 2 sum problems for sorted array
 23. 3 sum problems
-24. Find k most frequent elemtn
 25. Find majority candidate - more's
-
-
 
 
 
@@ -196,3 +196,99 @@ Page 107 - Compute highest 3 scrores of each student
 Page 126 - Graph if team A beats team B
 Page 130 - Transform one work to another, only one letter can be changed
 Page 141 - LCA using hash table
+
+
+
+------------------------------
+https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions
+
+Array
+Two Sum
+Best Time to Buy and Sell Stock
+Contains Duplicate
+Product of Array Except Self
+Maximum Subarray
+Maximum Product Subarray
+Find Minimum in Rotated Sorted Array
+Search in Rotated Sorted Array
+3 Sum
+Container With Most Water
+Binary
+Sum of Two Integers
+Number of 1 Bits
+Counting Bits
+Missing Number
+Reverse Bits
+Dynamic Programming
+Climbing Stairs
+Coin Change
+Longest Increasing Subsequence
+Longest Common Subsequence
+Word Break Problem
+Combination Sum
+House Robber
+House Robber II
+Decode Ways
+Unique Paths
+Jump Game
+Graph
+Clone Graph
+Course Schedule
+Pacific Atlantic Water Flow
+Number of Islands
+Longest Consecutive Sequence
+Alien Dictionary (Leetcode Premium)
+Graph Valid Tree (Leetcode Premium)
+Number of Connected Components in an Undirected Graph (Leetcode Premium)
+Interval
+Insert Interval
+Merge Intervals
+Non-overlapping Intervals
+Meeting Rooms (Leetcode Premium)
+Meeting Rooms II (Leetcode Premium)
+Linked List
+Reverse a Linked List
+Detect Cycle in a Linked List
+Merge Two Sorted Lists
+Merge K Sorted Lists
+Remove Nth Node From End Of List
+Reorder List
+Matrix
+Set Matrix Zeroes
+Spiral Matrix
+Rotate Image
+Word Search
+String
+Longest Substring Without Repeating Characters
+Longest Repeating Character Replacement
+Minimum Window Substring
+Valid Anagram
+Group Anagrams
+Valid Parentheses
+Valid Palindrome
+Longest Palindromic Substring
+Palindromic Substrings
+Encode and Decode Strings (Leetcode Premium)
+Tree
+Maximum Depth of Binary Tree
+Same Tree
+Invert/Flip Binary Tree
+Binary Tree Maximum Path Sum
+Binary Tree Level Order Traversal
+Serialize and Deserialize Binary Tree
+Subtree of Another Tree
+Construct Binary Tree from Preorder and Inorder Traversal
+Validate Binary Search Tree
+Kth Smallest Element in a BST
+Lowest Common Ancestor of BST
+Implement Trie (Prefix Tree)
+Add and Search Word
+Word Search II
+Heap
+Merge K Sorted Lists
+Top K Frequent Elements
+Find Median from Data Stream
+Important Link:
+14 Patterns to Ace Any Coding Interview Question
+
+If someone is interested to keep a track can copy this gist.

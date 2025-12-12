@@ -1,6 +1,9 @@
 
 1. KMP - Knuth Morris Pratt
 2. Rabin-Karp
+3. Manacher’s algorithm
+
 3. Aho-Corasick
 4. Z algorithm
-5. Manacher’s algorithm
+
+6. Boyer Moore

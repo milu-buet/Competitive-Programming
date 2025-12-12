@@ -1,4 +1,5 @@
 
+from collections import deque
 
 class MinStack(object):
 
@@ -6,7 +7,7 @@ class MinStack(object):
         """
         initialize your data structure here.
         """
-        self.arr = []
+        self.arr = deque()
         self.min = None
         
     def push(self, x):
@@ -14,7 +15,7 @@ class MinStack(object):
         :type x: int
         :rtype: None
         """
-        if len(self.arr == 0):
+        if len(self.arr) == 0:
             self.arr.append(x)
             self.min = x
         else:
@@ -26,15 +27,20 @@ class MinStack(object):
         """
         :rtype: None
         """
-        top = self.arr.pop(-1)
+        ret = self.top()
+        top = self.arr.pop()
+        
         if top < 0:
             self.min = self.min-top
+        return ret
 
     def top(self):
         """
         :rtype: int
         """
-        if len(self.arr == 1):
+        if len(self.arr)==0:
+            return None
+        elif len(self.arr) == 1:
             return self.arr[-1]
         elif self.arr[-1] < 0:
             return self.min
@@ -54,3 +60,28 @@ class MinStack(object):
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+obj=MinStack()
+
+obj.push(5)
+print(obj.top())
+print(obj.pop())
+obj.push(5)
+
+obj.push(7)
+print(obj.top())
+print(obj.pop())
+obj.push(7)
+
+obj.push(4)
+print(obj.top())
+print(obj.pop())
+obj.push(4)
+
+obj.push(3)
+print(obj.top())
+print(obj.pop())
+obj.push(3)
+
+obj.push(2)
+print(obj.top())

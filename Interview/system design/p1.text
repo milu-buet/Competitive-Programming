@@ -1,0 +1,69 @@
+Amazon allows users to views the past week’s most popular products by category, based on purchases from other customers.
+
+Design a feature like Amazon’s Sales Rank by Category.
+
+
+Feature List:
+1. show: the ranking/category for the last 7 days
+2. show ranking# for a product
+3. show rating# for a product
+4. show: How many times it was bought
+5. How many best product to show? 50
+6. after clicking a product, it will negigate to that product.
+
+Who will see it?
+1. users/customers/sellers - everyone
+2. Can anonymous users see it? yes
+
+
+Where to show it? Who will use it?
+1. a web page
+2. emailing high ranked product to possible customers?
+3. text messanging?
+4. Addvertising?
+
+
+system sizes:
+How many products
+How many categories
+How many buyers
+How many sellers
+How many expected requests/month?
+How many transactions/month
+How frequently to update results
+Expected read write ratio: 1000:1
+
+
+Can a product be in multiple category?
+No
+
+
+Assemptions:
+	Tables:
+		1. User
+		2. Product
+		2. Seller_Product 
+		3. Customer_Product  
+		4. Customer_Product_Rating
+
+
+ranking logic:
+Most rated, most sells?
+rank_value = rating*sells
+rank_value of product?
+
+
+How to calculate ranking?
+1. Should we calculate that on demand? 
+			- select product, rank "Table" group by category order by ranking
+			- caching will be useful, since all users see the same data
+			- How much consistency is necessary?
+
+2. A background demon will calculate and save each weeks ranking and save to a read only db?
+
+
+scalling issues:
+1. How recent data should be used to get ranking?
+2. How many expected users/min now and in future. 
+3. expected availability? Latency?
+4. Do we need separate servers for this service?

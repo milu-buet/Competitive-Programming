@@ -56,3 +56,4 @@ def solve(A,B):
 A = "TTFT"
 B = "|&^"
 print(solve(A,B))
+

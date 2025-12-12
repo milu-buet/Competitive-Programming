@@ -56,10 +56,6 @@ class Preorder(object):
 
 
 
-
-
-
-
 class Iterator_stack(object):
 	"""docstring for Iterator"""
 	def __init__(self, root):
@@ -146,7 +142,93 @@ while it.hasnext():
 	print(it.next())
 
 
+def dfs_rec(root):
+
+	if root:
+		print(root.val)
+		dfs_rec(root.left)
+		dfs_rec(root.right)
+
+def dfs_stack(root):
+
+	if root is None:
+		return
+
+	stack = [root]
+	while stack:
+		node = stack.pop()
+		print(node.val)
+
+		if node.right:
+			stack.append(node.right)
+		if node.left:
+			stack.append(node.left)
+
+
+def dfs_noStack(root):
+	node = root
+	while node:
+		if node.left is None:
+			print(node.val)
+			node = node.right
+		else:
+			pred = node.left
+			while pred.right and pred.right!=node:
+				pred = pred.right
+
+			if pred.right != node:
+				#first time
+				print(node.val)
+				pred.right = node
+				node = node.left
+			else:
+				#second time
+				pred.right = None
+				node = node.right
 
 
 
-		
+class Solution_1:
+	def __init__(self, root):
+		self.node = root
+		serlf.peekval = None
+
+	def hasNext(self):
+		return self.node is not None
+
+	def next(self):
+
+		ret = None
+		node = self.node
+
+		if self.peekval is not None:
+			ret = self.peekval
+			self.peekval = None
+
+		while ret is None and node is not None:
+			if node.left is None:
+				ret = node.val
+				node = node.right
+			else:
+				pred = node.left
+				while pred.right and pred.right!=node:
+					pred = pred.right
+
+				if pred.right != node:
+					#first time
+					ret = node.val
+					pred.right = node
+					node = node.left
+				else:
+					#second time
+					pred.right = None
+					node = node.right
+
+		self.node = node
+		return ret
+
+
+	def peek(self):
+		if self.peekval is None:
+			self.peekval = self.next()
+		return self.peekval

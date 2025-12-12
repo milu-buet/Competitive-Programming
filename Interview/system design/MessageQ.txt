@@ -1,0 +1,26 @@
+https://bytebytego.com/courses/system-design-interview/distributed-message-queue
+
+
+#Messaging Models
+ - Point-to-Point: One message - One consumer - once - No storage
+ - Pub/Sub: One message -> topic -> Multiple consumers
+
+ # Topic vs Queue
+Queue: Sending a letter to a specific person.
+Topic: Broadcasting a message on social media.
+
+
+# A consumer tracks the offset of consumed messages.
+
+Key Problems:
+* What if a topic is too big for one server?
+  -  we need distributed topic. A server can hold a partition/shard. Consumers can read from partition.
+
+* What if multiple consumer reads from a single partition, then message consume order is not guraanteed. 
+  - We can form consumer group, a consumer in the group can only access one partition. The consumer can track the offset in a partition.
+
+* What if number of consumer > number of partition?
+  - In that case, some consumer will never get partition assigned.
+
+* 
+

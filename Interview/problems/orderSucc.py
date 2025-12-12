@@ -100,6 +100,8 @@ def postOrderSucc(root, node):
 	
 	parent = None
 	cur = root
+
+	# get node's parent
 	while cur:
 		if cur.val > node.val:
 			parent = cur
@@ -112,13 +114,53 @@ def postOrderSucc(root, node):
 
 	if parent is None:
 		return None
+
+	# if node is at the left of the parent
 	elif parent.left == node and parent.right:
 		cur = parent.right
-		while cur.left:
-			cur = cur.left
+		while cur:
+			if cur.left:
+				cur = cur.left
+			elif cur.right:
+				cur = cur.right
+			else:
+				break
 		return cur
 	else:
 		return parent
+
+def post_succ(root, node):
+
+	if node is None:
+		return None 
+    
+    # find the higest level parent where node is in left sub tree
+	cur = root 
+	candidate = None 
+	while cur:
+		if node.val < cur.val:
+			candidate = cur.left 
+			cur = cur.left 
+		elif node.val > cur.val:
+			cur = cur.right 
+			candidate = cur.right 
+		else:
+			break
+
+	if candidate:
+		if candidate.right:
+			cur = candidate.right 
+			while cur:
+				if cur.left:
+					cur = cur.left 
+				elif cur.right and node.val!=cur.left.val:
+					cur = cur.right 
+				else:
+					return cur 
+		else:
+			return candidate
+
+	return None 
 
 
 def insert( node, data): 
@@ -160,6 +202,21 @@ while node.left:
 while node:
 	print(node.val)
 	node = postOrderSucc(root, node)
+
+print("****************")
+
+node = root
+
+while node.left:
+	node = node.left
+
+c = 0
+while node and c < 2:
+	print(node.val)
+	node = post_succ(root, node)
+	c+=1
+
+
 
 
 

@@ -7,7 +7,7 @@
 
 ####################################################################################################
 '''
-Determine the max value than can be made with total weight is less than or equal to a given limit.
+Determine the max value that can be made with total weight is less than or equal to a given limit.
 no repeatation allowed.
 
 i = within first i elements
@@ -82,17 +82,9 @@ print(dp(Weights, Values, WeightLimit))
 Determine the max value than can be made with total weight is less than or equal to a given limit.
 with repeatation allowed.
 
-i = within first i elements
 k = weight limit
-f(i,k) = within the first i elements what is the max value with weightlimit k?
-f(# of elements, WeightLimit) = Final answer
-f(i,k) = max ( f(i-1,k), v[i-1]+f(i-1,k-w[i-1]) )
-f(i,0) = 0
-f(0,k) = 0
-T(n) = O(n*k)
-s(n) = O(k)
 
-'''# f(k) = max( f(k), v[0]+f(k-w[0]), v[1]+f(k-w[1]), .... )
+'''# f(k) = max(v[0]+f(k-w[0]), v[1]+f(k-w[1]), .... )
 
 def dp(w, v, k):
 	mem = [0 for i in range(k+1)]
@@ -130,3 +122,8 @@ Values =  [3,1,6,2,3,9]
 WeightLimit = 20
 	
 print(dp(Weights, Values, WeightLimit))
+
+
+
+
+

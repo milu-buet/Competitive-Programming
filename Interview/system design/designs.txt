@@ -1,10 +1,15 @@
 
-1. Autocomplete
-2. Url shortner/ Tiny url
-3. Parking lot
-4. Design uber
-5. Chat/messanging service
-6. 
+
+
+1. Design google search autocomplete ## 
+2. Design Tiny url ## url shortner ##
+3. Design Parking lot ##
+4. Design uber ##
+5. Design watsapp ## messanging service ##  https://www.youtube.com/watch?v=L7LtmfFYjc4
+6. Design dropbox ## distributed file system ##  https://www.youtube.com/watch?v=U0xTu6E2CT8
+7. Design Cricinfo ## ## 
+8. twitter
+9. amazon sales ranking
 
 
 

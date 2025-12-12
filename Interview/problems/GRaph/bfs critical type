@@ -1,0 +1,40 @@
+https://leetcode.com/problems/path-with-maximum-minimum-value/
+
+
+#1
+If I want to push and visit a node only once:
+
+q = [node]
+visited = set([node])
+while q:
+	node = q.popleft()
+
+	for nbor in g[node]:
+		if nbor not visited:
+		   visited.add(nbor)
+		   q.append(nbor)
+
+# 2
+If a node needs to be pushed multiple times and visited only once:
+heap realted situation, when multiple visit is necessary
+
+q = [(node, dist_node)]
+visited = {}
+whule q:
+   node, dist = q.popleft() # heappop type
+
+   if node in visited:
+   		continue
+
+   visited[node] = dist
+
+   for nbor in g[node]:
+
+   		q.append(nbor)
+
+
+# if a node needs to be pused conditionally then
+visited[node] = cost ---pattern can be used
+
+if nbor not visited or newcost > visited[node]:
+      then push

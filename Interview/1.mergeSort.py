@@ -58,11 +58,45 @@ class Solution(object):
 
 
 A = [3,2,1,5,6,3,2]
-print(Solution().sortArray(A))
+#print(Solution().sortArray(A))
 
 # Merge Sort LinkedList 
 # T(n) = 2*T(n/2) + theta(n) = theta(nlogn)
 # S(n) = O(1)
+
+
+def merge_sort(arr, beg, end):
+    if beg < end:
+        mid = (beg+end)//2
+        merge_sort(arr, beg, mid)
+        merge_sort(arr, mid+1, end)
+        merge(arr, beg, mid, end)
+
+def merge(arr, beg, mid, end):
+    tmp = []
+    i = beg 
+    j = mid+1
+
+    while i<=mid and j<=end:
+        if arr[i] <= arr[j]:
+            tmp.append(arr[i])
+            i+=1
+        else:
+            tmp.append(arr[j])
+            j+=1
+
+    while i<=mid:
+        tmp.append(arr[i])
+        i+=1
+
+    while j<=end:
+        tmp.append(arr[j])
+        j+=1
+
+    arr[beg:end+1] = tmp 
+
+merge_sort(A, 0, 6)
+print(A)
 
 
 class Node(object):
@@ -83,9 +117,9 @@ class Solution(object):
         if node is None or node.next is None:
         	return node
         back,front = self.getbackfront(node)
-        node1 = self.mergesort(back)
-        node2 = self.mergesort(front)
-        return self.merge(node1,node2)
+        back = self.mergesort(back)
+        front = self.mergesort(front)
+        return self.merge(back,front)
 
     def getLen(self, node):
     	n = 0

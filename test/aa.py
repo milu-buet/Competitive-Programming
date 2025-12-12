@@ -1,12 +1,162 @@
+from math import fabs
+from random import random, shuffle
+from copy import copy
 
 
-a = ["maybe,230,1434,barcelona","xnova,201,1375,madrid","lee,166,3,madrid","alex,456,889,newdelhi","bob,263,1258,tokyo","iris,928,1565,paris","bob,777,542,taipei","alex,443,537,taipei","alex,893,1976,shenzhen","maybe,75,1980,shanghai","iris,716,754,moscow","alex,119,16,toronto","bob,836,1904,dubai","maybe,874,36,hongkong","alex,354,1328,luxembourg","xnova,852,330,barcelona","iris,749,200,amsterdam","maybe,560,587,milan","iris,803,691,milan","lee,158,987,mexico","xnova,443,1687,taipei","iris,164,119,paris","bob,568,1674,toronto","iris,420,1818,zurich","iris,967,1119,guangzhou","chalicefy,36,1984,paris","chalicefy,548,363,barcelona","chalicefy,95,1222,montreal","iris,176,268,milan","iris,344,1452,bangkok","bob,65,1559,zurich","xnova,405,957,mexico","iris,678,788,madrid","xnova,560,825,prague","iris,406,433,bangkok","xnova,589,837,budapest","bob,150,1634,singapore","maybe,685,602,madrid","alex,406,776,istanbul","bob,402,922,montreal","maybe,607,1953,tokyo","iris,643,1703,madrid","iris,677,1451,milan","maybe,481,1504,munich","chalicefy,212,1865,chicago","xnova,836,153,jakarta","iris,666,231,chicago","lee,293,1102,istanbul","iris,25,657,singapore","bob,688,451,beijing","xnova,535,270,munich","xnova,627,834,budapest","lee,432,520,dubai","alex,175,1127,mexico","bob,465,1080,taipei","bob,649,842,prague","lee,373,184,munich","bob,798,343,hongkong","lee,991,1570,mexico","maybe,231,1790,paris","maybe,467,1178,munich","lee,664,463,frankfurt","bob,510,1923,madrid","chalicefy,16,176,rome","xnova,786,804,guangzhou","xnova,640,513,jakarta","bob,478,928,barcelona","alex,924,223,milan","lee,622,194,amsterdam","lee,734,1915,prague","chalicefy,517,266,luxembourg","maybe,457,1802,montreal","iris,39,264,istanbul","chalicefy,820,71,newdelhi","bob,436,530,warsaw","maybe,860,517,toronto","maybe,668,572,mexico","chalicefy,867,1520,montreal","maybe,545,608,shanghai","iris,825,484,madrid","chalicefy,19,592,singapore","maybe,636,558,milan","lee,895,1876,taipei","iris,951,930,dubai","iris,45,904,beijing"]
+def _calcEcdf(samples, function_length):
+	nr_of_points = sum(samples)
+	assert nr_of_points >= 0
 
-b = ["bob,649,842,prague","alex,175,1127,mexico","iris,164,119,paris","lee,991,1570,mexico","lee,895,1876,taipei","iris,716,754,moscow","chalicefy,19,592,singapore","chalicefy,820,71,newdelhi","maybe,231,1790,paris","lee,158,987,mexico","iris,803,691,milan","xnova,786,804,guangzhou","lee,734,1915,prague","bob,836,1904,dubai","iris,666,231,chicago","iris,677,1451,milan","maybe,860,517,toronto","iris,344,1452,bangkok","lee,664,463,frankfurt","chalicefy,95,1222,montreal","lee,293,1102,istanbul","maybe,874,36,hongkong","maybe,457,1802,montreal","xnova,535,270,munich","iris,39,264,istanbul","chalicefy,548,363,barcelona","lee,373,184,munich","xnova,405,957,mexico","chalicefy,517,266,luxembourg","iris,25,657,singapore","bob,688,451,beijing","bob,263,1258,tokyo","xnova,852,330,barcelona","xnova,589,837,budapest","lee,152,981,mexico","alex,893,1976,shenzhen","xnova,560,825,prague","iris,967,1119,guangzhou","alex,924,223,milan","chalicefy,212,1865,chicago","alex,443,537,taipei","bob,510,1923,madrid","bob,798,343,hongkong","iris,643,1703,madrid","bob,478,928,barcelona","maybe,75,1980,shanghai","iris,176,268,milan","maybe,560,587,milan","alex,406,776,istanbul","maybe,481,1504,munich","maybe,685,602,madrid","iris,678,788,madrid","chalicefy,36,1984,paris","iris,749,200,amsterdam","iris,406,433,bangkok","bob,777,542,taipei","maybe,230,1434,barcelona","iris,420,1818,zurich","lee,622,194,amsterdam","maybe,545,608,shanghai","xnova,201,1375,madrid","lee,432,520,dubai","bob,150,1634,singapore","maybe,467,1178,munich","iris,45,904,beijing","maybe,607,1953,tokyo","maybe,636,558,milan","bob,568,1674,toronto","iris,825,484,madrid","iris,951,930,dubai","bob,465,1080,taipei","chalicefy,16,176,rome","xnova,836,153,jakarta","bob,436,530,warsaw","alex,354,1328,luxembourg","iris,928,1565,paris","xnova,627,834,budapest","xnova,640,513,jakarta","alex,119,16,toronto","xnova,443,1687,taipei","chalicefy,867,1520,montreal","alex,456,889,newdelhi","lee,166,3,madrid","bob,65,1559,zurich","maybe,668,572,mexico","bob,402,922,montreal"]
+	ecdf = [0.0] * function_length
+	nr_of_points = float(nr_of_points)
+	running_sum = 0.0
+	for i in range(function_length):
+		running_sum += samples[i] / nr_of_points
+		ecdf[i] = running_sum
+	return ecdf
 
-a.sort()
-b.sort()
 
-print(a)
-print()
-print(b)
+def _calc2sampleKS(samples1_inp, samples2_inp):
+	samples1 = copy(samples1_inp)
+	samples2 = copy(samples2_inp)
+	samples1.sort()
+	samples2.sort()
+
+	counter1 = 0
+	y1 = 0.0
+	counter2 = 0
+	y2 = 0.0
+
+	max_diff = 0.0
+	while counter1 < len(samples1) and counter2 < len(samples2):
+		if samples1[counter1] < samples2[counter2]:
+			y1 += 1.0/len(samples1)
+			counter1 += 1
+		elif samples2[counter2] < samples1[counter1]:
+			y2 += 1.0/len(samples2)
+			counter2 += 1
+		else:
+			y1 += 1.0/len(samples1)
+			y2 += 1.0/len(samples2)
+			counter1 += 1
+			counter2 += 1
+
+		diff = fabs(y1 - y2)
+		if diff > max_diff:
+			max_diff = diff
+
+	return max_diff
+
+
+def ks_disc_2sample(samples1, samples2, iters=1000):
+	assert len(samples1) > 0
+	assert len(samples2) > 0
+	assert iters > 0
+
+	# Calculate the ks between the samples
+	org_diff = _calc2sampleKS(samples1, samples2)
+
+	long_samples = samples1 + samples2
+	more_than_counter = 0
+	for itr in range(iters):
+		lables = [False]*len(samples1) + [True]*len(samples2)
+		shuffle(lables)
+
+		new_samples1 = [0.0] * len(samples1)
+		new_samples2 = [0.0] * len(samples2)
+		index1 = 0
+		index2 = 0
+		for i in range(len(long_samples)):
+			if lables[i]:
+				new_samples2[index2] = long_samples[i]
+				index2 += 1
+			else:
+				new_samples1[index1] = long_samples[i]
+				index1 += 1
+
+		new_diff = _calc2sampleKS(new_samples1, new_samples2)
+
+		if new_diff > org_diff:
+			more_than_counter += 1
+
+	return more_than_counter / float(iters)
+
+
+def _calc1sampleKS(samples_in, cdf):
+	y = 0.0
+	max_diff = 0.0
+	samples = copy(samples_in)
+	samples.sort()
+
+	for i in range(len(samples)):
+		y += 1.0 / len(samples)
+
+		if i == len(samples)-1 or samples[i] != samples[i+1]:
+			cdf_val = cdf(samples[i])
+			assert cdf_val >= 0.0
+			assert cdf_val <= 1.0
+
+			diff = fabs(cdf_val - y)
+
+			if diff > max_diff:
+				max_diff = diff
+	return max_diff
+
+
+def _generateSamplesFromCDF(cdf, nr_of_points):
+	outs = [0]*nr_of_points
+	cdf_0_val = cdf(0)
+	for i in range(nr_of_points):
+		r = random()
+		if r > cdf_0_val:
+			index = 0
+			while cdf(index) < r:
+				index += 1
+			outs[i] = index
+		elif r <= cdf_0_val:
+			index = 0
+			while cdf(index) >= r:
+				index -= 1
+			outs[i] = index + 1
+
+	return outs
+
+
+def ks_disc(samples, cdf, iters=1000):
+	# TODO: Throw errors instead of asserts
+	assert iters > 0
+
+	for s in samples:
+		assert type(s) == type(1)
+	nr_of_points = len(samples)
+
+	# Calc diff between samples and cdf
+	orig_diff = _calc1sampleKS(samples, cdf)
+
+	counter = 0
+	for itr in range(iters):
+		new_samples = _generateSamplesFromCDF(cdf, nr_of_points)
+		new_diff = _calc1sampleKS(new_samples, cdf)
+
+		if new_diff > orig_diff:
+			counter += 1
+
+	return counter / float(iters)
+
+
+if __name__ == '__main__':
+	from random import randint
+
+	# 1-sample test
+	y = [randint(1, 4) for _ in range(20)]  # Uniform in [1, 3]
+	_cdf = lambda x: 0.0 if x < 0 else min(0.25*x, 1.0) # Uniform in [1, 4]
+
+	out = ks_disc(y, _cdf)
+	print(out)
+
+	# 2-sample test
+	samples1 = [randint(1, 15) for _ in range(1000)]
+	samples2 = [randint(1, 15) if random()<0.95 else 3 for _ in range(1000)]
+	out = ks_disc_2sample(samples1, samples2, iters=1000)
+
+	print(out)

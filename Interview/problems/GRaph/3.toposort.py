@@ -5,9 +5,11 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: List[int]
         """
+
+        from collections import defaultdict
         
-        graph = [ [] for _ in range(numCourses) ]
-        deg = [ 0 for _ in range(numCourses) ]
+        graph = defaultdict(list)
+        deg = defaultdict(int)
         
         
         for a,b in prerequisites:

@@ -29,7 +29,7 @@ class Solution(object):
 # 5  t
 # 6  t
 
-
+# i = items taken, j = sum possible?
 # F(i,j) = F(i-1, j) or F(i-1, j - A[i-1])
 
 # T(n) = O(n*k)
@@ -53,6 +53,21 @@ class Solution(object):
 			bottom^=1
 
 		return mem[top][k]
+
+	def solveDP3(self, nums, k):
+		n = len(nums)
+		mem = [[False for i in range(k+1)] for i in range(n+1)]
+
+		for i in range(n+1):
+			mem[i][0] = True
+
+		for i in range(1,n+1):
+			for j in range(1,k+1):
+				mem[i][j] = mem[i-1][j]
+				if j >= nums[i-1]:
+					mem[i][j] = mem[i][j] or mem[i-1][j - nums[i-1]]
+
+		return mem[-1][-1]
 
 
 

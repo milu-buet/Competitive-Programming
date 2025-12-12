@@ -43,33 +43,6 @@ class Solution:
         return root
 
 
-
-def bstpre(arr):
-
-    if len(arr)==0:
-        return None
-
-    root = TreeNode(arr[0])
-
-    stack = [root]
-
-    for i in range(1,len(arr)):
-
-        if arr[i] < stack[-1].val:
-            anode = TreeNode(arr[i])
-            stack[-1].left = anode
-            stack.append(anode)
-        else:
-
-            while stack and arr[i] > stack[-1].val:
-                node = stack.pop()
-
-            node.right = TreeNode(arr[i])
-            stack.append(node.right)
-
-    return root
-
-
 def preorder(root):
     if root is None:
         return 

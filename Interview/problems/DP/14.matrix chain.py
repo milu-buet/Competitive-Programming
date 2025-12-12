@@ -43,21 +43,3 @@ A = [1, 2, 3, 4]
 print(solve(A))
 
 
-
-'''
-ABCDE
-(A)(BCDE)
-(AB)(CDE)
-(ABC)(DE)
-(ABCD)(E)
-
-f(i,j) = k:i...j-1,  f(i,k) + f(k+1,j) + A[i-1]*A[k]*A[j]
-f(i,i) = 0
-
-f(1,n) = ?
-
-
-'''
-
-#def solve(A):
-

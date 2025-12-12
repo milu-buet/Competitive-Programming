@@ -10,7 +10,7 @@
 class Node(object):
 	def __init__(self, val):
 		self.val = val
-		self.neighbours = {}
+		self.chd = {}
 		self.end = False
 
 class Trie(object):
@@ -21,17 +21,17 @@ class Trie(object):
 	def add(self, s):
 		node = self.root
 		for i in range(len(s)):
-			if s[i] not in node.neighbours:
-				node.neighbours[s[i]] = Node(s[i])
-			node = node.neighbours[s[i]]
+			if s[i] not in node.chd:
+				node.chd[s[i]] = Node(s[i])
+			node = node.chd[s[i]]
 		node.end = True
 
 	def search(self, s):
 		node = self.root
 		for i in range(len(s)):
-			if s[i] not in node.neighbours:
+			if s[i] not in node.chd:
 				return False
-			node = node.neighbours[s[i]]
+			node = node.chd[s[i]]
 		return node.end
 
 	def show(self):
@@ -39,8 +39,8 @@ class Trie(object):
 		while stack:
 			node = stack.pop()
 			print(node.val, node.end)
-			for n in list(node.neighbours.keys())[::-1]:
-				stack.append(node.neighbours[n])
+			for n in list(node.chd.keys())[::-1]:
+				stack.append(node.chd[n])
 
 trie = Trie()
 trie.add('abcd')
@@ -49,13 +49,3 @@ trie.add('fabc')
 trie.show()
 
 
-
-
-
-
-
-
-
-
-
-		

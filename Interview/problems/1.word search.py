@@ -121,7 +121,7 @@ class Solution(object):
             a = a+i
             b = b+j
             
-            if a>=0 and b>=0 and a<len(board) and b<len(board[0]) and board[a][b] in root.nbs:
+            if 0<=a<len(board) and 0<=b<len(board[0]) and board[a][b] in root.nbs:
                 temp = board[i][j]
                 board[i][j] = '#'
                 self.dfs(words, board, root.nbs[board[a][b]], a, b, ans)
@@ -129,10 +129,3 @@ class Solution(object):
 
         
        
-        
-            
-        
-        
-        
-        
-        

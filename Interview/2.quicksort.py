@@ -75,7 +75,7 @@ class Solution(object):
     def partition(self, nums, beg, end):
         pi = end
         pivot  = nums[pi]
-        i = beg # how many elements ae smaller
+        i = beg # elements before index i are <= pivot
         for j in range(beg,end):
             if nums[j] < pivot:
                 nums[i],nums[j] = nums[j],nums[i]
@@ -89,4 +89,44 @@ A = [3,2,1,5,6,3,2]
 #Solution().sort(A,0,len(A)-1)
 Solution().quicksortIta(A)
 print(A)
+
+
+
+def quicksort(arr, beg, end):
+    if beg < end:
+        pi = part(arr, beg, end)
+        quicksort(arr, beg, pi -1)
+        quicksort(arr, pi+1, end)
+
+def part(arr, beg, end):
+    i = beg
+    for j in range(beg, end):
+        if arr[j] < arr[end]:
+            arr[i], arr[j] = arr[j], arr[i]
+            i+=1
+    arr[i], arr[end] = arr[end], arr[i]
+    return i
+
+
+def quicselect(arr, beg, end, k):
+
+    pi = part(arr, beg, end)
+    if k == pi:
+        return arr[pi]
+    elif k < pi:
+        return quicselect(arr, beg, pi-1, k)
+    else:
+        return quicselect(arr, pi+1, end, k)
+
+
+
+
+A = [3,2,1,5,6,3,2,1,2.5]
+x = quicselect(A, 0, len(A)-1, 4)
+print(x)
+
+
+quicksort(A, 0, len(A)-1)
+print(A)
+
 

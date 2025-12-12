@@ -1,0 +1,6 @@
+Database knowledge
+
+* CAP Theorem
+* Consistency, Availability, Partition Tolerance
+
+Partition Tolerance is not optional, it is essential.

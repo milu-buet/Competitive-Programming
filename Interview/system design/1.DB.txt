@@ -1,10 +1,19 @@
 
+
+
+What to know:
+1. How RDMS(MySQL) works
+2. How NoSQL(Casandra) works
+3. How Caching server works 
+
+
+
 SQL:
 *  Mysql, Postgres, Oracle
 *  ACID property is maintained: Atomicity, Consistency, Isolation, Durability
 							- Financial transaction 
 							- Lot of insert update delete
-*  Table based, exatact schema needed
+*  Table based, exact schema needed
 *  Not easy to scale, vertically scalable
 *  good fit for complex queries
 *  changing schema is costly and risky
@@ -23,7 +32,7 @@ NoSQL:
 
 
 
-Sharding:
+Sharding for RDMS:
 	- segment database table for horitzontal scaling
 
 

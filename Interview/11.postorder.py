@@ -146,12 +146,11 @@ class Iterrator_nostack(object):
 
 	def next(self):
 
+		ret = None
+
 		if self.peekval is not None:
 			ret = self.peekval
 			self.peekval = None
-			return ret
-
-		ret = None
 
 		while ret is None:
 			while self.normal and self.node:
